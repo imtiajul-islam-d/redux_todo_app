@@ -13,17 +13,16 @@ export const addTask = (task) => {
     payload: task,
   };
 };
-
-export const deleteTask = (taskId) => {
+export const toggleTask = (taskId) => {
   return {
-    type: REMOVETODO,
+    type: TOGGLETODO,
     payload: taskId,
   };
 };
 
-export const toggleTask = (taskId) => {
+export const deleteTask = (taskId) => {
   return {
-    type: TOGGLETODO,
+    type: REMOVETODO,
     payload: taskId,
   };
 };
