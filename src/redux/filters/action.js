@@ -11,10 +11,8 @@ export const filterColorChanged = (color, changeType) => {
 };
 
 export const changeStatus = (status) => {
-    return {
-        type: STATUSCHANGED,
-        payload: {
-            status
-        }
-    }
-}
+  return {
+    type: STATUSCHANGED,
+    payload: status,
+  };
+};
