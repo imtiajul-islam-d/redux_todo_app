@@ -1,8 +1,12 @@
+import { Provider } from "react-redux";
 import Home from "./components/Home/Home";
+import store from "./redux/sotre";
 
 function App() {
   return (
-    <Home></Home>
+    <Provider store={store}>
+      <Home></Home>
+    </Provider>
   );
 }
 
