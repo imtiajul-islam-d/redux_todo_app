@@ -21,14 +21,15 @@ const Todo = () => {
     default:
       content = todos?.map((todo) => <TodoItem todo={todo} key={todo?.id} />);
   }
-
-  // if (filter?.status) {
-  //   // const status = todos.filter(todo => todo.)
-  //   content = todos?.map((todo) => <TodoItem key={todo?.id} todo={todo} />);
-  // }
-  // if (filter.colors.length > 0) {
-  //   content = todos?.map((todo) => <TodoItem key={todo?.id} todo={todo} />);
-  // }
+  // colors filter
+  if (filter.colors.length > 0) {
+    const colorFilter = todos?.filter((todo) =>
+      filter?.colors.includes(todo?.color)
+    );
+    content = colorFilter?.map((todo) => (
+      <TodoItem key={todo?.id} todo={todo} />
+    ));
+  }
   console.log(content);
   return (
     <>
