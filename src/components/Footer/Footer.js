@@ -17,7 +17,8 @@ const Footer = () => {
   const dispatch = useDispatch();
   const todos = useSelector((state) => state.todo);
   const filter = useSelector((state) => state.filter);
-  console.log(filter.colors);
+  const { status, colors } = filter;
+  console.log(status);
   const taskLeft = todos.filter((todo) => !todo.completed).length;
 
   return (
@@ -27,21 +28,21 @@ const Footer = () => {
         <ul className="flex space-x-1 items-center text-xs">
           <li
             onClick={(e) => dispatch(changeStatus(e.target.innerText))}
-            className="cursor-pointer font-bold"
+            className={`cursor-pointer ${status === "All" && "font-bold"}`}
           >
             All
           </li>
           <li>|</li>
           <li
             onClick={(e) => dispatch(changeStatus(e.target.innerText))}
-            className="cursor-pointer"
+            className={`cursor-pointer ${status === "Incomplete" && "font-bold"}`}
           >
             Incomplete
           </li>
           <li>|</li>
           <li
             onClick={(e) => dispatch(changeStatus(e.target.innerText))}
-            className="cursor-pointer"
+            className={`cursor-pointer ${status === "Complete" && "font-bold"}`}
           >
             Complete
           </li>
@@ -49,7 +50,7 @@ const Footer = () => {
           <li></li>
           <li
             onClick={() => {
-              if (filter?.colors.includes("green")) {
+              if (!filter?.colors.includes("green")) {
                 dispatch(filterColorChanged("green", "added"));
               } else {
                 dispatch(filterColorChanged("green", "removed"));
@@ -57,8 +58,26 @@ const Footer = () => {
             }}
             className="h-3 w-3 border-2 border-green-500 md:hover:bg-green-500 rounded-full cursor-pointer bg-green-500"
           ></li>
-          <li className="h-3 w-3 border-2 border-red-500 md:hover:bg-red-500 rounded-full cursor-pointer"></li>
-          <li className="h-3 w-3 border-2 border-yellow-500 md:hover:bg-yellow-500 rounded-full cursor-pointer"></li>
+          <li
+            onClick={() => {
+              if (!filter?.colors.includes("red")) {
+                dispatch(filterColorChanged("red", "added"));
+              } else {
+                dispatch(filterColorChanged("red", "removed"));
+              }
+            }}
+            className="h-3 w-3 border-2 border-red-500 md:hover:bg-red-500 rounded-full cursor-pointer"
+          ></li>
+          <li
+            onClick={() => {
+              if (!filter?.colors.includes("yellow")) {
+                dispatch(filterColorChanged("yellow", "added"));
+              } else {
+                dispatch(filterColorChanged("yellow", "removed"));
+              }
+            }}
+            className="h-3 w-3 border-2 border-yellow-500 md:hover:bg-yellow-500 rounded-full cursor-pointer"
+          ></li>
         </ul>
       </div>
     </>
