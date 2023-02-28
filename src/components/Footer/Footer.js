@@ -18,7 +18,6 @@ const Footer = () => {
   const todos = useSelector((state) => state.todo);
   const filter = useSelector((state) => state.filter);
   const { status, colors } = filter;
-  console.log(status);
   const taskLeft = todos.filter((todo) => !todo.completed).length;
 
   return (

@@ -12,7 +12,8 @@ const todoReducer = (state = initialState, action) => {
         ...state,
         {
           id: nextTodo(state),
-          text: action.task
+          text: action.payload,
+          completed: false
         },
       ];
     case TOGGLETODO: 
