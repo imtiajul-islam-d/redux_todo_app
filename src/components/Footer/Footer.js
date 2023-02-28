@@ -35,7 +35,9 @@ const Footer = () => {
           <li>|</li>
           <li
             onClick={(e) => dispatch(changeStatus(e.target.innerText))}
-            className={`cursor-pointer ${status === "Incomplete" && "font-bold"}`}
+            className={`cursor-pointer ${
+              status === "Incomplete" && "font-bold"
+            }`}
           >
             Incomplete
           </li>
@@ -50,33 +52,39 @@ const Footer = () => {
           <li></li>
           <li
             onClick={() => {
-              if (!filter?.colors.includes("green")) {
+              if (!colors.includes("green")) {
                 dispatch(filterColorChanged("green", "added"));
               } else {
                 dispatch(filterColorChanged("green", "removed"));
               }
             }}
-            className="h-3 w-3 border-2 border-green-500 md:hover:bg-green-500 rounded-full cursor-pointer bg-green-500"
+            className={`h-3 w-3 border-2 border-green-500 ${
+              colors.includes("green") && "bg-green-500"
+            } md:hover:bg-green-500 rounded-full cursor-pointer`}
           ></li>
           <li
             onClick={() => {
-              if (!filter?.colors.includes("red")) {
+              if (!colors.includes("red")) {
                 dispatch(filterColorChanged("red", "added"));
               } else {
                 dispatch(filterColorChanged("red", "removed"));
               }
             }}
-            className="h-3 w-3 border-2 border-red-500 md:hover:bg-red-500 rounded-full cursor-pointer"
+            className={`h-3 w-3 border-2 border-red-500 ${
+              colors.includes("red") && "bg-red-500"
+            } md:hover:bg-red-500 rounded-full cursor-pointer`}
           ></li>
           <li
             onClick={() => {
-              if (!filter?.colors.includes("yellow")) {
+              if (!colors.includes("yellow")) {
                 dispatch(filterColorChanged("yellow", "added"));
               } else {
                 dispatch(filterColorChanged("yellow", "removed"));
               }
             }}
-            className="h-3 w-3 border-2 border-yellow-500 md:hover:bg-yellow-500 rounded-full cursor-pointer"
+            className={`h-3 w-3 border-2 ${
+              colors.includes("yellow") && "bg-yellow-500"
+            } border-yellow-500 md:hover:bg-yellow-500 rounded-full cursor-pointer`}
           ></li>
         </ul>
       </div>
