@@ -1,10 +1,17 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import fetchTodos from "../../redux/todos/thunk/fetchTodos";
 import TodoItem from "./TodoItem";
 
 const Todo = () => {
   const todos = useSelector((state) => state.todo);
   const filter = useSelector((state) => state.filter);
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchTodos)
+  }, [dispatch])
+
   let content;
 
   switch (filter?.status) {

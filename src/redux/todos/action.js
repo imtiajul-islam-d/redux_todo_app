@@ -3,10 +3,17 @@ import {
   ALLCOMPLETED,
   CLEARCOMPLETED,
   COLORSELECTED,
+  FETCH_TODOS,
   REMOVETODO,
   TOGGLETODO,
 } from "./actionTypes";
 
+export const fetchInitialTodos = (task) => {
+  return {
+    type: FETCH_TODOS,
+    payload: task
+  }
+}
 export const addTask = (task) => {
   return {
     type: ADDTODO,

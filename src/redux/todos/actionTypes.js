@@ -4,3 +4,4 @@ export const TOGGLETODO = "todo/toggleTodo";
 export const COLORSELECTED = "todo/colorSelected";
 export const ALLCOMPLETED = "todo/allCompleted";
 export const CLEARCOMPLETED = "todo/clearCompleted";
+export const FETCH_TODOS = "todo/fetchTodos"

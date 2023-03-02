@@ -4,10 +4,10 @@ import doubleClick from "../../images/double-tick.png";
 import notes from "../../images/notes.png";
 import plusImage from "../../images/plus.png";
 import {
-  addTask,
   allCompleted,
   clearCompleted,
 } from "../../redux/todos/action";
+import addTodo from "../../redux/todos/thunk/addTodo";
 
 const Header = () => {
   const [input, setInput] = useState("");
@@ -17,11 +17,11 @@ const Header = () => {
   };
   const handleOnSubmit = (e) => {
     e.preventDefault();
-    if(!input){
-      alert("Please mention the task")
-      return
+    if (!input) {
+      alert("Please mention the task+");
+      return;
     }
-    dispatch(addTask(input));
+    dispatch(addTodo(input));
     setInput("");
   };
   return (
