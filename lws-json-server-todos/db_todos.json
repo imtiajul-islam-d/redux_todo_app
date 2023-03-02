@@ -3,13 +3,13 @@
     {
       "id": 1,
       "text": "Learn Vanilla JavaScript",
-      "completed": true,
+      "completed": false,
       "color": "yellow"
     },
     {
       "id": 2,
       "text": "Learn Modern ES6+ JavaScript",
-      "completed": true,
+      "completed": false,
       "color": "red"
     },
     {
@@ -24,7 +24,7 @@
     },
     {
       "text": "dfsa",
-      "completed": false,
+      "completed": true,
       "id": 5
     },
     {
@@ -39,7 +39,7 @@
     },
     {
       "text": "sdfa",
-      "completed": false,
+      "completed": true,
       "id": 8
     },
     {
@@ -116,6 +116,11 @@
       "text": "fs",
       "completed": false,
       "id": 23
+    },
+    {
+      "text": "new task",
+      "completed": false,
+      "id": 24
     }
   ]
 }
