@@ -14,10 +14,10 @@ export const fetchInitialTodos = (task) => {
     payload: task
   }
 }
-export const addTask = (task) => {
+export const addTask = (todo) => {
   return {
     type: ADDTODO,
-    payload: task,
+    payload: todo,
   };
 };
 export const toggleTask = (taskId) => {

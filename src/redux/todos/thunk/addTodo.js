@@ -12,9 +12,10 @@ const addTodo = (todoText) => {
                 "Content-type": "application/json; charset=UTF-8"
             }
         });
-        const todos = await response.json();
+        const todo = await response.json();
+        console.log(todo);
       
-        dispatch(addTask(todos.text));
+        dispatch(addTask(todo));
     }
 }
 export default addTodo

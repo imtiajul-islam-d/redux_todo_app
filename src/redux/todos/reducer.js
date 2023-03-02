@@ -9,21 +9,19 @@ import {
 } from "./actionTypes";
 import { initialState } from "./initialState";
 
-const nextTodo = (todos) => {
-  const maxId = todos.reduce((maxid, todo) => Math.max(todo.id, maxid), -1);
-  return maxId + 1;
-};
+// const nextTodo = (todos) => {
+//   const maxId = todos.reduce((maxid, todo) => Math.max(todo.id, maxid), -1);
+//   return maxId + 1;
+// };
 const todoReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_TODOS:
-      return [...state, ...action.payload];
+      return action.payload
     case ADDTODO:
       return [
         ...state,
         {
-          id: nextTodo(state),
-          text: action.payload,
-          completed: false,
+          ...action.payload
         },
       ];
     case TOGGLETODO:
