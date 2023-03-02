@@ -3,8 +3,8 @@
     {
       "id": 1,
       "text": "Learn Vanilla JavaScript",
-      "completed": false,
-      "color": "yellow"
+      "completed": true,
+      "color": "red"
     },
     {
       "id": 2,
@@ -15,17 +15,20 @@
     {
       "text": "test",
       "completed": false,
-      "id": 3
+      "id": 3,
+      "color": "red"
     },
     {
       "text": "df",
       "completed": false,
-      "id": 4
+      "id": 4,
+      "color": "red"
     },
     {
       "text": "dfsa",
       "completed": true,
-      "id": 5
+      "id": 5,
+      "color": "red"
     },
     {
       "text": "dsf",
